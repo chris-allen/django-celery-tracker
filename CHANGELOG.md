@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.1]
+
 ### Fixed
 -`README.md` now properly updated to `django_celery_tracker`
 
 ### Added
 -Disclaimer for database usage
 
-[Unreleased]: https://github.com/chris-allen/dream-ops/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/chris-allen/django-celery-tracker/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/chris-allen/django-celery-tracker/compare/v1.0.0...v1.0.1
