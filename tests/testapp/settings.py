@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'celery_tracker',
+    'django_celery_tracker',
 ]
 
 MIDDLEWARE = [

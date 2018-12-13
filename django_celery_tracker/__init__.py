@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Celery monitor for Django."""
-# :copyright: (c) 2016, Ask Solem.
+"""Celery tracker for Django."""
+# :copyright: (c) 2018, The Authors.
 #             All rights reserved.
-# :license:   BSD (3 Clause), see LICENSE for more details.
+# :license:   MIT, see LICENSE for more details.
 
 from __future__ import absolute_import, unicode_literals
 
@@ -33,4 +33,4 @@ del(re)
 
 __all__ = []
 
-default_app_config = 'celery_tracker.apps.CeleryTrackerConfig'
+default_app_config = 'django_celery_tracker.apps.CeleryTrackerConfig'

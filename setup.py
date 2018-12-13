@@ -16,7 +16,7 @@ except (AttributeError, ImportError):
     def _pyimp():
         return 'Python'
 
-NAME = 'celery_tracker'
+NAME = 'django_celery_tracker'
 
 E_UNSUPPORTED_PYTHON = '%s 1.0 requires %%s %%s or later!' % (NAME,)
 
@@ -39,19 +39,14 @@ classes = """
     Development Status :: 5 - Production/Stable
     License :: OSI Approved :: BSD License
     Programming Language :: Python
-    Programming Language :: Python :: 2
-    Programming Language :: Python :: 2.7
     Programming Language :: Python :: 3
     Programming Language :: Python :: 3.4
-    Programming Language :: Python :: 3.5
-    Programming Language :: Python :: 3.6
+    Programming Language :: Python :: 3.7
     Programming Language :: Python :: Implementation :: CPython
     Programming Language :: Python :: Implementation :: PyPy
     Framework :: Django
-    Framework :: Django :: 1.8
-    Framework :: Django :: 1.9
-    Framework :: Django :: 1.10
     Framework :: Django :: 1.11
+    Framework :: Django :: 2.0
     Operating System :: OS Independent
     Topic :: Communications
     Topic :: System :: Distributed Computing
@@ -144,7 +139,7 @@ setuptools.setup(
     author_email=meta['contact'],
     url=meta['homepage'],
     platforms=['any'],
-    license='BSD',
+    license='MIT',
     classifiers=classifiers,
     install_requires=reqs('base.txt'),
     tests_require=reqs('test.txt'),
