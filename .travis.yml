@@ -1,0 +1,10 @@
+language: python
+dist: xenial
+sudo: false
+python:
+  - 3.4
+  - 3.7
+install: travis_retry pip install -U codecov tox-travis
+script: tox -v --travis-after -- -v
+after_success:
+- codecov

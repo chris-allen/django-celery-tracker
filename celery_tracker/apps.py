@@ -15,6 +15,4 @@ class CeleryTrackerConfig(AppConfig):
     verbose_name = _('Celery Tracker')
 
     def ready(self):
-        print('IMPORTING SIGNALS')
         from celery_tracker import signals  # noqa F401
-        print('DONE')

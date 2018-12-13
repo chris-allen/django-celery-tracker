@@ -1,0 +1,75 @@
+=========================
+Celery Tracker for Django
+=========================
+
+|build-status| |coverage|
+
+This django extension is intended for existing celery projects that want better monitoring of what's going on in their queue.
+
+Usage
+=====
+
+To use this with your project, you need to:
+
+1. Install django-celery-tracker:
+
+.. code-block:: console
+
+    $ pip install django-celery-tracker
+
+2. Add ``celery_tracker`` to ``INSTALLED_APPS`` in your Django settings file:
+
+.. code-block:: python
+
+    INSTALLED_APPS = (
+        ...
+        'celery_tracker',
+    )
+
+3. Create the database tables by applying migrations:
+
+.. code-block:: console
+
+    $ python manage.py migrate celery_tracker
+
+4. You will now have a record of all _future_ celery tasks and their progress which can queried like so:
+
+.. code-block:: console
+
+    $ python manage.py shell
+    ...
+    >>> from celery_tracker.models import CeleryTask
+    >>> CeleryTask.objects.all()
+    <QuerySet [<CeleryTask: id=3d889396-daa2-4209-9348-9ec71bfb1262, name=api.taskapp.celery.debug_task>]
+
+Release
+=======
+switch to ``master`` branch:
+----------------------------
+- Change package version in ``celery_tracker/__init__.py`` according to release changes (``major|minor|patch``).
+- Update ``CHANGELOG.md``:
+  - Rename ``[Unreleased]`` section to reflect new release version and release date, same format as for all previous releases
+  - Create new ``[Unreleased]`` section on top of file, as it was previously
+  - On the bottom of ``CHANGELOG.md`` file, create comparison reference for current release changes:
+
+.. code-block:: md
+
+    # was
+    [Unreleased]: https://github.com/chris-allen/django-celery-tracker/compare/v0.3.0...HEAD
+    [0.3.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.2.0...v0.3.0
+
+    # became
+    # - "Unreleased" renamed to commit version
+    # - new "Unreleased" created, comparing last "0.4.0" commit with "HEAD"
+    [Unreleased]: https://github.com/chris-allen/django-celery-tracker/compare/v0.4.0...HEAD
+    [0.4.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.3.0...v0.4.0
+    [0.3.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.2.0...v0.3.0
+
+  - Commit ``CHANGELOG.md`` and ``celery_tracker/__init__.py`` with message ``:rocket: {version}`` (where version is your release version)
+
+.. |build-status| image:: https://travis-ci.org/chris-allen/django-celery-tracker.svg?branch=master
+    :alt: Build status
+    :target: https://travis-ci.org/chris-allen/django-celery-tracker
+
+.. |coverage| image:: https://codecov.io/gh/chris-allen/django-celery-tracker/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/chris-allen/django-celery-tracker?branch=master
