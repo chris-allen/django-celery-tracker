@@ -7,7 +7,7 @@ def task_publish_handler(sender=None, headers=None, body=None, **kwargs):
     info = headers if 'task' in headers else body
 
     CeleryTask.objects.get_or_create(
-        task_id=info['id'], task_name=info['task']
+        task_id=info['id'], task_name=info['task'], args=info['argsrepr']
     )
 
 

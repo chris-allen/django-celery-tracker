@@ -29,3 +29,4 @@ cover/
 htmlcov/
 coverage.xml
 venv
+.vscode

@@ -36,7 +36,8 @@ class test_CeleryTask:
     def test_worker_success(self):
         headers = {
             'id': 'task-{0}'.format(next(_ids)),
-            'task': 'django_celery_tracker.test.task'
+            'task': 'django_celery_tracker.test.task',
+            'argsrepr': '(1,)',
         }
         task_publish_handler(headers=headers)
 
@@ -69,7 +70,8 @@ class test_CeleryTask:
     def test_worker_failure(self):
         headers = {
             'id': 'task-{0}'.format(next(_ids)),
-            'task': 'django_celery_tracker.test.task'
+            'task': 'django_celery_tracker.test.task',
+            'argsrepr': '(1,)',
         }
         task_publish_handler(headers=headers)
 
