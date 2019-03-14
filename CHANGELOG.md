@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+-Dashboard view included in `django_celery_tracker.urls`
+-Field `args` to `CeleryTask` model
+
 ## [1.0.1]
 
 ### Fixed

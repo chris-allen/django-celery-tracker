@@ -10,6 +10,7 @@ class CeleryTask(models.Model):
     )
     task_id = models.CharField(max_length=64, db_index=True, unique=True)
     task_name = models.CharField(max_length=512)
+    args = models.TextField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, null=True)
     started = models.DateTimeField(null=True, blank=True)
     completed = models.DateTimeField(null=True, blank=True)

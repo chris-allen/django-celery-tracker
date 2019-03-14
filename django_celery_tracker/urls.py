@@ -13,9 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url
+from django_celery_tracker.views import (
+    tracker_dashboard,
+    timeline_page_data,
+    task_details,
+)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^$', tracker_dashboard, name="celery_tracker_dashboard"),
+    url(r'^timeline-data/$', timeline_page_data),
+    url(r'^task-details/(?P<task_id>[0-9A-Za-z\-]+)/$', task_details),
 ]

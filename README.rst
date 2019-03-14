@@ -32,7 +32,7 @@ To use this with your project, you need to:
 
     $ python manage.py migrate django_celery_tracker
 
-4. You will now have a record of all *future* celery tasks and their progress which can queried like so:
+4. You will now have a record of all *future* celery tasks and their progress which can be queried like so:
 
 .. code-block:: console
 
@@ -41,6 +41,19 @@ To use this with your project, you need to:
     >>> from django_celery_tracker.models import CeleryTask
     >>> CeleryTask.objects.all()
     <QuerySet [<CeleryTask: id=3d889396-daa2-4209-9348-9ec71bfb1262, name=api.taskapp.celery.debug_task>]
+
+Dashboard
+=========
+
+Optionally, you can include a dashboard view that can only be accessed by admin users. To add the dashboard to your project, simply add the following to your ``urls.py``:
+
+.. code-block:: python
+
+    urlpatterns = [
+        path("celery-tracker/", include("django_celery_tracker.urls")),
+    ]
+
+You can now visit ``http://site_url/celery-tracker`` to view the status of your tasks!
 
 Disclaimer
 ==========
@@ -70,7 +83,7 @@ switch to ``master`` branch:
     [0.4.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.3.0...v0.4.0
     [0.3.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.2.0...v0.3.0
 
-  - Commit ``CHANGELOG.md`` and ``django_celery_tracker/__init__.py`` with message ``:rocket: {version}`` (where version is your release version)
+- Commit ``CHANGELOG.md`` and ``django_celery_tracker/__init__.py`` with message ``:rocket: {version}`` (where version is your release version)
 
 .. |build-status| image:: https://travis-ci.org/chris-allen/django-celery-tracker.svg?branch=master
     :alt: Build status

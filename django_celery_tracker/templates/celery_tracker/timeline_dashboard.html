@@ -1,0 +1,74 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}Django Celery Tracker{% endblock %}
+
+{% block branding %}
+  <h1>Django Celery Tracker</h1>
+{% endblock %}
+
+{% block extrahead %}
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'celery_tracker/css/dashboard.css' %}">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <script type="text/javascript" src="{% static 'celery_tracker/js/dashboard.js' %}"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      let today = new Date().toDateInputValue();
+      $('#date-picker').attr('max', today);
+      $('#date-picker').val(today);
+      $('#date-picker').change();
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-filters">
+  <input id="date-picker" type="date" onchange="getDay()" />
+  <div id="refresh-wrapper"></div>
+</div>
+<div id="dashboard">
+  <div id="left-pane" class="center">
+    <div id="placeholder">
+      Select a task for more details
+    </div>
+    <div id="task-details" style="display: none">
+      <h2>Task Details</h2>
+      <div class="form-row">
+        <label class="required">Name</label>
+        <span id="task_name"></span>
+      </div>
+      <div class="form-row">
+        <label class="required">UUID</label>
+        <span id="uuid"></span>
+      </div>
+      <div id="args-container" class="form-row">
+        <label class="required">Args</label>
+        <span id="args"></span>
+      </div>
+      <div class="form-row">
+        <label class="required">State</label>
+        <span id="state"></span>
+      </div>
+      <div class="form-row">
+        <label class="required">Started</label>
+        <span id="started"></span>
+      </div>
+      <div class="form-row">
+        <label class="required">Completed</label>
+        <span id="completed"></span>
+      </div>
+      <div id="traceback-container" class="form-row">
+        <label class="required">Stack Trace</label>
+        <div>
+          <pre id="traceback"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="my-timeline"></div>
+</div>
+{% endblock %}
