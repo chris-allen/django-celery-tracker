@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+-Now passing `update_fields` to calls to `CeleryTask.save()` for those connecting to the `post_save` signal
+
 ## [1.1.0]
 
 ### Added
