@@ -18,7 +18,7 @@ def task_prerun_handler(sender=None, task_id=None, **kwargs):
 
     t = CeleryTask.objects.get_or_create(task_id=task_id)[0]
     t.started = timezone.now()
-    t.save()
+    t.save(update_fields=['started'])
 
 
 @task_postrun.connect
@@ -32,4 +32,4 @@ def task_postrun_handler(sender=None, task_id=None, state=None, **kwargs):
         t.post_state = state
     else:
         t.post_state = 'PREMATURE_SHUTDOWN'
-    t.save()
+    t.save(update_fields=['completed', 'post_state'])
