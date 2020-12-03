@@ -40,13 +40,13 @@ classes = """
     License :: OSI Approved :: BSD License
     Programming Language :: Python
     Programming Language :: Python :: 3
-    Programming Language :: Python :: 3.4
-    Programming Language :: Python :: 3.7
+    Programming Language :: Python :: 3.6
+    Programming Language :: Python :: 3.8
     Programming Language :: Python :: Implementation :: CPython
     Programming Language :: Python :: Implementation :: PyPy
     Framework :: Django
-    Framework :: Django :: 1.11
-    Framework :: Django :: 2.0
+    Framework :: Django :: 2.x
+    Framework :: Django :: 3.x
     Operating System :: OS Independent
     Topic :: Communications
     Topic :: System :: Distributed Computing
@@ -71,7 +71,7 @@ def add_doc(m):
 pats = {re_meta: add_default,
         re_doc: add_doc}
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, NAME, '__init__.py')) as meta_fh:
+with open(os.path.join(here, NAME, '__init__.py'), encoding='utf-8') as meta_fh:
     meta = {}
     for line in meta_fh:
         if line.strip() == '# -eof meta-':
@@ -99,7 +99,7 @@ def _reqs(*f):
     return [
         _pip_requirement(r) for r in (
             strip_comments(l) for l in open(
-                os.path.join(os.getcwd(), 'requirements', *f)).readlines()
+                os.path.join(os.getcwd(), 'requirements', *f), encoding='utf-8').readlines()
         ) if r]
 
 
@@ -141,7 +141,6 @@ setuptools.setup(
     platforms=['any'],
     license='MIT',
     classifiers=classifiers,
-    install_requires=reqs('base.txt'),
     tests_require=reqs('test.txt'),
     cmdclass={'test': pytest},
     zip_safe=False,

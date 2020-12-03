@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import re_path
 from django_celery_tracker.views import (
     tracker_dashboard,
     timeline_page_data,
@@ -21,7 +21,7 @@ from django_celery_tracker.views import (
 )
 
 urlpatterns = [
-    url(r'^$', tracker_dashboard, name="celery_tracker_dashboard"),
-    url(r'^timeline-data/$', timeline_page_data),
-    url(r'^task-details/(?P<task_id>[0-9A-Za-z\-]+)/$', task_details),
+    re_path(r'^$', tracker_dashboard, name="celery_tracker_dashboard"),
+    re_path(r'^timeline-data/$', timeline_page_data),
+    re_path(r'^task-details/(?P<task_id>[0-9A-Za-z\-]+)/$', task_details),
 ]

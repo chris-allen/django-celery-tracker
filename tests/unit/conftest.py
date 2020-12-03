@@ -5,7 +5,9 @@ import pytz
 import uuid
 from datetime import datetime, timedelta
 
-from celery.contrib.pytest import depends_on_current_app
+from celery.contrib.pytest import (celery_app, celery_enable_logging,
+                                   celery_parameters, depends_on_current_app,
+                                   celery_config, use_celery_app_trap)
 from celery.contrib.testing.app import TestApp, Trap
 from django.contrib.auth import get_user_model
 
@@ -14,7 +16,11 @@ from django_celery_tracker.models import CeleryTask
 
 User = get_user_model()
 
-__all__ = ['app', 'depends_on_current_app']
+# Tricks flake8 into silencing redefining fixtures warnings.
+__all__ = (
+    'celery_app', 'celery_enable_logging', 'depends_on_current_app',
+    'celery_parameters', 'celery_config', 'use_celery_app_trap'
+)
 
 
 @pytest.fixture(scope='session', autouse=True)

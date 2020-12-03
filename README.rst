@@ -85,9 +85,9 @@ switch to ``master`` branch:
 
 - Commit ``CHANGELOG.md`` and ``django_celery_tracker/__init__.py`` with message ``:rocket: {version}`` (where version is your release version)
 
-.. |build-status| image:: https://travis-ci.org/chris-allen/django-celery-tracker.svg?branch=master
+.. |build-status| image:: https://travis-ci.com/chris-allen/django-celery-tracker.svg?branch=master
     :alt: Build status
-    :target: https://travis-ci.org/chris-allen/django-celery-tracker
+    :target: https://travis-ci.com/chris-allen/django-celery-tracker
 
 .. |coverage| image:: https://codecov.io/gh/chris-allen/django-celery-tracker/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/chris-allen/django-celery-tracker?branch=master
