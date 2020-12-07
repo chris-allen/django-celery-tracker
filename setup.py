@@ -45,8 +45,8 @@ classes = """
     Programming Language :: Python :: Implementation :: CPython
     Programming Language :: Python :: Implementation :: PyPy
     Framework :: Django
-    Framework :: Django :: 2.x
-    Framework :: Django :: 3.x
+    Framework :: Django :: 2.2
+    Framework :: Django :: 3.0
     Operating System :: OS Independent
     Topic :: Communications
     Topic :: System :: Distributed Computing
