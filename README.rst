@@ -17,7 +17,7 @@ To use this with your project, you need to:
 
     $ pip install django-celery-tracker
 
-2. Add ``django_celery_tracker`` to ``INSTALLED_APPS`` in your Django settings file:
+1. Add ``django_celery_tracker`` to ``INSTALLED_APPS`` in your Django settings file:
 
 .. code-block:: python
 
@@ -26,13 +26,13 @@ To use this with your project, you need to:
         'django_celery_tracker',
     )
 
-3. Create the database tables by applying migrations:
+1. Create the database tables by applying migrations:
 
 .. code-block:: console
 
     $ python manage.py migrate django_celery_tracker
 
-4. You will now have a record of all *future* celery tasks and their progress which can be queried like so:
+1. You will now have a record of all *future* celery tasks and their progress which can be queried like so:
 
 .. code-block:: console
 

@@ -1,7 +1,6 @@
 [run]
 branch = 1
 cover_pylib = 0
-include = *django_celery_tracker/*
 omit = tests/*
 
 [report]
