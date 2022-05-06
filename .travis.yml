@@ -1,9 +1,9 @@
 language: python
-dist: xenial
+dist: jammy
 sudo: false
 python:
-  - 3.6
   - 3.8
+  - 3.10
 install: travis_retry pip install -U codecov tox-travis
 script: tox -v --travis-after -- -v
 after_success:
