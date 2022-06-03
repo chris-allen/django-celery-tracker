@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+- Dropped support for `Django<3.2`
+
+### Fixed
+- Admin theme now honors dark mode
+
 ## [1.3.0]
 
 ### Added
