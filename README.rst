@@ -87,7 +87,7 @@ switch to ``master`` branch:
 
 .. |build-status| image:: https://travis-ci.com/chris-allen/django-celery-tracker.svg?branch=master
     :alt: Build status
-    :target: https://travis-ci.com/chris-allen/django-celery-tracker
+    :target: https://app.travis-ci.com/github/chris-allen/django-celery-tracker
 
 .. |coverage| image:: https://codecov.io/gh/chris-allen/django-celery-tracker/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/chris-allen/django-celery-tracker?branch=master
