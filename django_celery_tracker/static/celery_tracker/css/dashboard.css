@@ -60,8 +60,8 @@
 
 /* Left Pane */
 #left-pane {
-  background-color: #f8f8f8;
-  border: 1px solid #eaeaea;
+  background: var(--darkened-bg);
+  min-height: 75px;
   width: 350px;
 }
 #left-pane.center {
