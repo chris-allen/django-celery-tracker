@@ -59,35 +59,3 @@ Disclaimer
 ==========
 
 The datastore for a celery message queue is usually in-memory and highly-optimized (eg ``redis`` or ``rabbitmq``).  This django extension creates a database entry for every celery task that is created. You may want to periodically delete older entries if storage is an obstacle.
-
-Release
-=======
-switch to ``master`` branch:
-----------------------------
-- Change package version in ``django_celery_tracker/__init__.py`` according to release changes (``major|minor|patch``).
-- Update ``CHANGELOG.md``:
-  - Rename ``[Unreleased]`` section to reflect new release version and release date, same format as for all previous releases
-  - Create new ``[Unreleased]`` section on top of file, as it was previously
-  - On the bottom of ``CHANGELOG.md`` file, create comparison reference for current release changes:
-
-.. code-block:: md
-
-    # was
-    [Unreleased]: https://github.com/chris-allen/django-celery-tracker/compare/v0.3.0...HEAD
-    [0.3.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.2.0...v0.3.0
-
-    # became
-    # - "Unreleased" renamed to commit version
-    # - new "Unreleased" created, comparing last "0.4.0" commit with "HEAD"
-    [Unreleased]: https://github.com/chris-allen/django-celery-tracker/compare/v0.4.0...HEAD
-    [0.4.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.3.0...v0.4.0
-    [0.3.0]: https://github.com/chris-allen/django-celery-tracker/compare/v0.2.0...v0.3.0
-
-- Commit ``CHANGELOG.md`` and ``django_celery_tracker/__init__.py`` with message ``:rocket: {version}`` (where version is your release version)
-
-.. |build-status| image:: https://travis-ci.com/chris-allen/django-celery-tracker.svg?branch=master
-    :alt: Build status
-    :target: https://app.travis-ci.com/github/chris-allen/django-celery-tracker
-
-.. |coverage| image:: https://codecov.io/gh/chris-allen/django-celery-tracker/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/chris-allen/django-celery-tracker?branch=master
