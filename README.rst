@@ -59,3 +59,10 @@ Disclaimer
 ==========
 
 The datastore for a celery message queue is usually in-memory and highly-optimized (eg ``redis`` or ``rabbitmq``).  This django extension creates a database entry for every celery task that is created. You may want to periodically delete older entries if storage is an obstacle.
+
+.. |build-status| image:: https://github.com/chris-allen/django-celery-tracker/actions/workflows/static_tests.yml/badge.svg
+    :alt: Build status
+    :target: https://github.com/chris-allen/django-celery-tracker/actions/workflows/static_tests.yml
+
+.. |coverage| image:: https://codecov.io/gh/chris-allen/django-celery-tracker/branch/main/graph/badge.svg?token=pDd3klFxhP
+    :target: https://codecov.io/gh/chris-allen/django-celery-tracker
