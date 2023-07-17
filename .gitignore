@@ -19,6 +19,7 @@ Documentation/
 .ropeproject/
 .project
 .pydevproject
+.python-version
 .idea/
 .coverage
 .ve*
